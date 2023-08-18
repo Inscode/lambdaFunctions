@@ -1,27 +1,23 @@
-object StringFormattingExample {
-  def main(args: Array[String]): Unit = {
-     val formattedName = formatNames("Niroshan", (input, _) => toUpper(input, some(1)) 
-     println(formattedName)
+object MyClass {
+    val toUpper: (String) => String = (str) => str.toUpperCase()
 
-  }
+    val toLower: (String) => String = (str) => str.toLowerCase()
 
-  def toUpper(input: String, index: Option[Int] = None): String = {
-    index match {
-      case Some(i) if i >= 0 && i < input.length =>
-        input.updated(i, input.charAt(i).toUpper)
-      case _ => input.toUpperCase()
+    val formatNames: (String, Int, Int, String => String) => Unit = (name, start, end, format) => {
+        if (start == 0 && end == 0) println(format(name)) // To format the complete name use 0 for both start and end
+        else {
+            val startingName = name.substring(0, start)
+            val formattedName = name.substring(start, end)
+            val remainingName = name.substring(end)
+            println(startingName + format(formattedName) + remainingName)
+        }
     }
-  }
 
-  def toLower(input: String, index: Option[Int] = None): String = {
-    index match {
-      case Some(i) if i >= 0 && i < input.length =>
-        input.updated(i, input.charAt(i).toLower)
-      case _ => input.toLowerCase()
+
+    def main(args: Array[String]) = {
+        formatNames("Benny", 0, 0, toUpper)
+        formatNames("Niroshan", 0, 2, toUpper)
+        formatNames("Saman", 0, 0, toLower)
+        formatNames("Kumara", 5, 6, toUpper)
     }
-  }
-
-  def formatNames(name: String, formatFunction: (String, Option[Int]) => String, index: Option[Int] = None): String = {
-    formatFunction(name, index)
-  }
 }
