@@ -8,16 +8,16 @@ object MyClass {
 
 
     def main(args: Array[String]) = {
-        val int1 = interest(10000)
-        val int2 = interest(30000)
-        val int3 = interest(100000)
-        val int4 = interest(1000000)
-        val int5 = interest(10000000)
+        val sam1 = interest(10000)
+        val sam2 = interest(30000)
+        val sam3 = interest(100000)
+        val sam4 = interest(1000000)
+        val sam5 = interest(10000000)
 
-        println(s"Interest for 10000: ${"%.2f".format(int1)}")
-        println(s"Interest for 30000: ${"%.2f".format(int2)}")
-        println(s"Interest for 100000: ${"%.2f".format(int3)}")
-        println(s"Interest for 1000000: ${"%.2f".format(int4)}")
-        println(s"Interest for 10000000: ${"%.2f".format(int5)}")
+        println(s"Interest for 10000: ${"%.2f".format(sam1)}")
+        println(s"Interest for 30000: ${"%.2f".format(sam2)}")
+        println(s"Interest for 100000: ${"%.2f".format(sam3)}")
+        println(s"Interest for 1000000: ${"%.2f".format(sam4)}")
+        println(s"Interest for 10000000: ${"%.2f".format(sam5)}")
     }
 }
