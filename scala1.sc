@@ -15,9 +15,9 @@ object MyClass {
         val sam5 = interest(23000000)
 
         println(s"Interest for 10000: ${"%.2f".format(sam1)}")
-        println(s"Interest for 30000: ${"%.2f".format(sam2)}")
-        println(s"Interest for 100000: ${"%.2f".format(sam3)}")
-        println(s"Interest for 1000000: ${"%.2f".format(sam4)}")
-        println(s"Interest for 10000000: ${"%.2f".format(sam5)}")
+        println(s"Interest for 23000: ${"%.2f".format(sam2)}")
+        println(s"Interest for 150000: ${"%.2f".format(sam3)}")
+        println(s"Interest for 190000: ${"%.2f".format(sam4)}")
+        println(s"Interest for 23000000: ${"%.2f".format(sam5)}")
     }
 }
