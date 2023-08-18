@@ -1,26 +1,23 @@
-object InterestCalculator {
-  def calculateInterest(depositAmount: Double): Double = {
-    val interestRate = depositAmount match {
-      case amount if amount <= 20000 => 0.02
-      case amount if amount <= 200000 => 0.04
-      case amount if amount <= 2000000 => 0.035
-      case _ => 0.065
+object MyClass {
+    val interest: (Int) => Double = (amount) => {
+        if (amount <= 20000) 0.02 * amount
+        else if (amount <= 200000) 0.035 * amount
+        else if (amount <= 2000000) 0.04 * amount
+        else 0.065 * amount
     }
 
-    val calculate = (amount: Double, rate: Double) => amount * rate
 
-    calculate(depositAmount, interestRate)
-  }
+    def main(args: Array[String]) = {
+        val int1 = interest(10000)
+        val int2 = interest(30000)
+        val int3 = interest(100000)
+        val int4 = interest(1000000)
+        val int5 = interest(10000000)
 
-  def main(args: Array[String]): Unit = {
-    val deposit1 = 15000.0
-    val deposit2 = 100000.0
-    val deposit3 = 500000.0
-    val deposit4 = 2500000.0
-
-    println(s"Interest for Rs. $deposit1: ${calculateInterest(deposit1)}")
-    println(s"Interest for Rs. $deposit2: ${calculateInterest(deposit2)}")
-    println(s"Interest for Rs. $deposit3: ${calculateInterest(deposit3)}")
-    println(s"Interest for Rs. $deposit4: ${calculateInterest(deposit4)}")
-  }
+        println(s"Interest for 10000: ${"%.2f".format(int1)}")
+        println(s"Interest for 30000: ${"%.2f".format(int2)}")
+        println(s"Interest for 100000: ${"%.2f".format(int3)}")
+        println(s"Interest for 1000000: ${"%.2f".format(int4)}")
+        println(s"Interest for 10000000: ${"%.2f".format(int5)}")
+    }
 }
